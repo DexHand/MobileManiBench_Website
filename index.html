@@ -154,7 +154,7 @@
                         Built on NVIDIA Isaac Sim and powered by reinforcement learning, our pipeline autonomously generates diverse manipulation trajectories with rich annotations (language instructions, multi-view RGB-depth-segmentation images, synchronized object/robot states and actions). 
                         MobileManiBench features 2 mobile platforms (parallel-gripper and dexterous-hand robots), 2 synchronized cameras (head and right wrist), 630 objects in 20 categories, 5 skills (open, close, pull, push, pick) with over 100 tasks performed in 100 realistic scenes, yielding 300K trajectories. 
                         This design enables controlled, scalable studies of robot embodiments, sensing modalities, and policy architectures, accelerating research on data efficiency and generalization. 
-                        We benchmark representative VLA models and report insights into perception, reasoning, and control in complex simulated environments, with all code, datasets, and models publicly released.
+                        We benchmark representative VLA models and report insights into perception, reasoning, and control in complex simulated environments.
                         <br><br>
                     </p>
                 </div>
@@ -191,7 +191,7 @@
     <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">MobileManiRL</h2>
         <div style="text-align: center;">
-            <img src="assets/points.png" style="width: 800px; height: auto;" class="center"/>
+            <img src="assets/points.png" style="width: 600px; height: auto;" class="center"/>
         </div>
         <p>
             <br>
@@ -199,6 +199,7 @@
             teleoperating or manually designing policies for each configuration would be prohibitively time-consuming. 
             To address this, we propose a universal state-based reinforcement learning (RL) policy, termed <b>MobileManiRL</b>, 
             which parameterizes each robot-object-skill combination using keypoint-based displacements of the robot gripper/hand points, the object grasp point, and the goal point. 
+            <br>
             A universal reward function encourages the robot's gripper/hand points to reach the object grasp point and transport it to the goal point. 
             This formulation enables a single RL policy to generalize across diverse manipulation scenarios while maintaining task-specific success.
         </p>
@@ -209,8 +210,7 @@
                 <source src="assets/videos/MobileManiRL.mp4" type="video/mp4">
             </video>
             <p>
-                <br>
-                <b>MobileManiRL training the G1 robot and XHand robot in tabletop and ground scenes.</b>
+                MobileManiRL training for the G1 robot and XHand robot in tabletop and ground scenes.
                 <br><br>
             </p>
         </div>
@@ -223,13 +223,15 @@
 <section class="section"  id="MobileManiDataset">
     <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">MobileManiDataset</h2>
+        <br>
         <div style="text-align: center;">
-            <img src="assets/objects.png" style="width: 800px; height: auto;" class="center"/>
+            <img src="assets/objects.png" style="width: 1000px; height: auto;" class="center"/>
         </div>
         <p>
             <br>
             For each of the G1 robot and the XHand robot, MobileManiDataset comprises 630 objects across 20 categories, manipulated through 5 skills and over 100 tasks using 1,182 robot-object-skill combinations of MobileManiRL, which are further distributed across 100 scene placements. 
             The dataset is split into 506 objects and 80 scenes for VLA training, plus 124 objects and 20 scenes for testing, yielding a total of 15,232 robot-object-skill-scene combinations for training and 920 combinations for testing. 
+            <br>
             For each training combination, we generate 10 successful manipulation trajectories in Isaac Sim, resulting in 150K training trajectories. 
             Each manipulation trajectory is recorded at 30 FPS with an average length of 160 frames, including one natural language instruction; synchronized 520x520 RGB, depth, and segmentation images from both head-view and wrist-view cameras; the corresponding object and robot states; and the executed (6+D) dimensional action $A_t$ at each timestep. 
             All states and actions are recorded in the global world coordinate frame.
@@ -241,8 +243,7 @@
                 <source src="assets/videos/MobileManiDataset_G1_Robot.mp4" type="video/mp4">
             </video>
             <p>
-                <br>
-                <b>MobileManiDataset trajectories for the G1 robot.</b>
+                MobileManiDataset trajectories for the G1 robot.
                 <br><br>
             </p>
         </div>
@@ -252,8 +253,7 @@
                 <source src="assets/videos/MobileManiDataset_XHand_Robot.mp4" type="video/mp4">
             </video>
             <p>
-                <br>
-                <b>MobileManiDataset trajectories for the XHand robot.</b>
+                MobileManiDataset trajectories for the XHand robot.
                 <br><br>
             </p>
         </div>
@@ -268,11 +268,11 @@
     <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">MobileManiVLA</h2>
         <div style="text-align: center;">
-            <img src="assets/vla.png" style="width: 800px; height: auto;" class="center"/>
+            <img src="assets/vla.png" style="width: 1000px; height: auto;" class="center"/>
         </div>
         <p>
             <br>
-            Following the design of CogACT, we structure our MobileManiVLA into three components: the vision, language, and action modules.
+            Following CogACT, we structure our MobileManiVLA into three components: the vision, language, and action modules.
         </p>
         <br>
 
