@@ -195,11 +195,12 @@
         </div>
         <p>
             <br>
-            Given that MobileManiBench involves 2 mobile-based robots, 630 objects across 20 categories, 5 manipulation skills, and over 100 tasks, 
+            Given that MobileManiBench involves <b>2</b> mobile-based robots, <b>630</b> objects across <b>20</b> categories, <b>5</b> manipulation skills, and over <b>100</b> tasks, 
             teleoperating or manually designing policies for each configuration would be prohibitively time-consuming. 
+            
+            <br><br>
             To address this, we propose a universal state-based reinforcement learning (RL) policy, termed <b>MobileManiRL</b>, 
-            which parameterizes each robot-object-skill combination using keypoint-based displacements of the robot gripper/hand points, the object grasp point, and the goal point. 
-            <br>
+            which parameterizes each robot-object-skill combination using keypoint-based displacements of the <b>robot gripper/hand points</b>, the <b>object grasp point</b>, and the <b>goal point</b>. 
             A universal reward function encourages the robot's gripper/hand points to reach the object grasp point and transport it to the goal point. 
             This formulation enables a single RL policy to generalize across diverse manipulation scenarios while maintaining task-specific success.
         </p>
@@ -229,11 +230,11 @@
         </div>
         <p>
             <br>
-            For each of the G1 robot and the XHand robot, MobileManiDataset comprises 630 objects across 20 categories, manipulated through 5 skills and over 100 tasks using 1,182 robot-object-skill combinations of MobileManiRL, which are further distributed across 100 scene placements. 
+            For each of the G1 robot and the XHand robot, MobileManiDataset comprises <b>630</b> objects across <b>20</b> categories, manipulated through <b>5</b> skills and over <b>100</b> tasks using <b>1,182</b> robot-object-skill combinations of MobileManiRL, which are further distributed across <b>100</b> scene placements. 
             The dataset is split into 506 objects and 80 scenes for VLA training, plus 124 objects and 20 scenes for testing, yielding a total of 15,232 robot-object-skill-scene combinations for training and 920 combinations for testing. 
-            <br>
-            For each training combination, we generate 10 successful manipulation trajectories in Isaac Sim, resulting in 150K training trajectories. 
-            Each manipulation trajectory is recorded at 30 FPS with an average length of 160 frames, including one natural language instruction; synchronized 520x520 RGB, depth, and segmentation images from both head-view and wrist-view cameras; the corresponding object and robot states; and the executed (6+D) dimensional action $A_t$ at each timestep. 
+            <br><br>
+            For each training combination, we generate <b>10</b> successful manipulation trajectories in Isaac Sim, resulting in <b>150K</b> training trajectories. 
+            Each manipulation trajectory is recorded at 30 FPS with an average length of 160 frames, including one natural language instruction; synchronized 520x520 RGB, depth, and segmentation images from both head-view and wrist-view cameras; the corresponding object and robot states; and the executed (6+D) dimensional action at each timestep. 
             All states and actions are recorded in the global world coordinate frame.
         </p>
         <br>
@@ -290,7 +291,7 @@
         </div>
         <p>
             <br>
-            Success rates of MobileManiRL and MobileManiVLA on the G1 robot and XHand robot across 20 object categories and 5 mobile manipulation skills.
+            Success rates of <b>MobileManiRL</b> and <b>MobileManiVLA</b> on the G1 robot and XHand robot across <b>20</b> object categories and <b>5</b> mobile manipulation skills.
             MobileManiRL is evaluated on seen objects with 1024 episodes per robot-object-skill combination, whereas MobileManiVLA is evaluated on unseen objects and scenes, with 10 episodes per robot-object-skill-scene combination. 
             Both experiments are conducted with randomized robot initial poses to assess robustness.
             <br><br>
@@ -302,7 +303,7 @@
         </div>
         <p>
             <br>
-            Success rates of MobileManiRL and MobileManiVLA on the G1 robot and XHand robot across 5 manipulation skills.
+            Success rates of <b>MobileManiRL</b> and <b>MobileManiVLA</b> on the G1 robot and XHand robot across <b>5</b> manipulation skills.
             <br><br>
         </p>
         <hr>
